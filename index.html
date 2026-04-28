@@ -1,10 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <title>내 홈페이지</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부서 안내</title>
+    <style>
+        /* 화면 중앙 정렬 및 디자인 설정 */
+        body { 
+            font-family: 'Malgun Gothic', sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            background-color: #f0f2f5; 
+            margin: 0; 
+        }
+        .container { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            text-align: center; 
+            width: 300px;
+        }
+        input[type="password"] { 
+            padding: 10px; 
+            margin: 15px 0; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            width: 90%; 
+            font-size: 16px;
+        }
+        button { 
+            padding: 10px; 
+            width: 100%;
+            background-color: #0056b3; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:hover { 
+            background-color: #004494; 
+        }
+        /* 숨겨둘 내용 (처음엔 안 보이게 설정) */
+        #secretContent { 
+            display: none; 
+        }
+        .info-text {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    <h1>안녕하세요! 깃허브로 만든 사이트입니다.</h1>
-    <p>성공적으로 페이지가 배포되었습니다.</p>
+
+    <div class="container" id="loginBox">
+        <h2>1234</h2>
+        <input type="password" id="pwInput" placeholder="비밀번호를 입력하세요">
+        <button onclick="checkPassword()">확인</button>
+        <p id="errorMsg" style="color: red; display: none; font-size: 14px;">비밀번호가 틀렸습니다.</p>
+    </div>
+
+    <div class="container" id="secretContent">
+        <h2>✅ 인증 완료</h2>
+        <p class="info-text">
+            <strong>영업기획팀 류덕영</strong><br>
+            담당업무는 <strong>팀즈</strong>이고<br>
+            <strong>별관 5층</strong>에 있다.
+        </p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            // 사용자가 입력한 값 가져오기
+            var pw = document.getElementById("pwInput").value;
+            
+            // 🔥 이곳에서 원하는 비밀번호를 설정하세요 (현재 '1234')
+            if (pw === "1234") {
+                // 비밀번호가 맞으면 입력창을 숨기고 내용을 보여줌
+                document.getElementById("loginBox").style.display = "none";
+                document.getElementById("secretContent").style.display = "block";
+            } else {
+                // 비밀번호가 틀리면 경고 메시지 표시
+                document.getElementById("errorMsg").style.display = "block";
+            }
+        }
+    </script>
+
 </body>
 </html>
