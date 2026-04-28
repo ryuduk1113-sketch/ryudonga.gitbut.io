@@ -3,93 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>부서 안내</title>
+    <title>Information</title>
     <style>
-        /* 화면 중앙 정렬 및 디자인 설정 */
         body { 
-            font-family: 'Malgun Gothic', sans-serif; 
+            font-family: 'Courier New', Courier, monospace; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            height: 100vh; 
-            background-color: #f0f2f5; 
+            min-height: 100vh; 
+            background-color: #0d1117; 
+            color: #39ff14; /* 매트릭스 느낌의 형광 초록색 */
             margin: 0; 
+            padding: 20px;
         }
-        .container { 
-            background: white; 
-            padding: 40px; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-            text-align: center; 
-            width: 300px;
-        }
-        input[type="password"] { 
-            padding: 10px; 
-            margin: 15px 0; 
-            border: 1px solid #ccc; 
-            border-radius: 5px; 
-            width: 90%; 
-            font-size: 16px;
-        }
-        button { 
-            padding: 10px; 
-            width: 100%;
-            background-color: #0056b3; 
-            color: white; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            font-size: 16px;
-            font-weight: bold;
-        }
-        button:hover { 
-            background-color: #004494; 
-        }
-        /* 숨겨둘 내용 (처음엔 안 보이게 설정) */
-        #secretContent { 
-            display: none; 
-        }
-        .info-text {
-            font-size: 18px;
-            color: #333;
-            line-height: 1.6;
+        .binary-container { 
+            max-width: 800px; 
+            word-break: break-all; 
+            line-height: 1.8; 
+            font-size: 14px;
+            text-align: justify;
+            border: 1px solid #333;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
         }
     </style>
 </head>
 <body>
 
-    <div class="container" id="loginBox">
-        <h2>페이지 암호 입력</h2>
-        <input type="password" id="pwInput" placeholder="비밀번호를 입력하세요">
-        <button onclick="checkPassword()">확인</button>
-        <p id="errorMsg" style="color: red; display: none; font-size: 14px;">비밀번호가 틀렸습니다.</p>
+    <div class="binary-container">
+        11101001 10011111 10010010 11101001 10011001 10000101 11101010 10011000 10011101 11101110 10011000 10000000 00100000 11101011 10011011 10011000 11101101 10011101 10110111 11101001 10011001 10000101 00100000 11101011 10011101 10101101 11101011 10011101 10101101 11101010 10100111 10000101 11101011 10011011 10101100 00100000 11101011 10011010 10011100 11101101 10011010 10011100 00100000 11101011 10001001 10001100 11101011 10011010 10111100 00100000 11101011 10111000 10100100 11101010 10110001 10000100 00100000 11101011 10001010 10011100 11101010 10110000 10000100 00100000 00110101 11101110 1011층 10001111 11101010 10011110 10010000 00100000 11101001 10011001 10101111 11101011 10001001 10100100 00101110
     </div>
-
-    <div class="container" id="secretContent">
-        <h2>✅ 인증 완료</h2>
-        <p class="info-text">
-            <strong>영업기획팀 류덕영</strong><br>
-            담당업무는 <strong>팀즈</strong>이고<br>
-            <strong>별관 5층</strong>에 있다.
-        </p>
-    </div>
-
-    <script>
-        function checkPassword() {
-            // 사용자가 입력한 값 가져오기
-            var pw = document.getElementById("pwInput").value;
-            
-            // 🔥 이곳에서 원하는 비밀번호를 설정하세요 (현재 '1234')
-            if (pw === "1234") {
-                // 비밀번호가 맞으면 입력창을 숨기고 내용을 보여줌
-                document.getElementById("loginBox").style.display = "none";
-                document.getElementById("secretContent").style.display = "block";
-            } else {
-                // 비밀번호가 틀리면 경고 메시지 표시
-                document.getElementById("errorMsg").style.display = "block";
-            }
-        }
-    </script>
 
 </body>
 </html>
